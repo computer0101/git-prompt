@@ -12,8 +12,8 @@ else
 	PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]' # set window title
 	PS1="$PS1"'\[\033[32m\]'       # change to green
 	PS1="$PS1"'\u'             # user@host<space>
-	PS1="$PS1"'\[\033[40m\]'       # change to brownish yellow
-	PS1="$PS1"'\w'                 # current working directory
+	#PS1="$PS1"'\[\033[40m\]'       # change to brownish yellow
+	PS1="$PS1"' @$PWD'                 # current working directory
 	if test -z "$WINELOADERNOEXEC"
 	then
 		GIT_EXEC_PATH="$(git --exec-path 2>/dev/null)"
@@ -29,7 +29,7 @@ else
 		fi
 	fi
 	PS1="$PS1"'\[\033[0m\]'        # change color
-	PS1="$PS1"' ► '                 # prompt: always $
+	PS1="$PS1"' $ '                 # prompt: always $
 fi
 
 MSYS2_PS1="$PS1"               # for detection by MSYS2 SDK's bash.basrc
